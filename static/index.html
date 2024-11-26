@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Trading Assistant</h1>
+            <p>Your AI-powered market analysis companion</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="chat">Chat</button>
+            <button class="tab-btn" data-tab="market">Market Analysis</button>
+            <button class="tab-btn" data-tab="csv">CSV Analysis</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Chat Tab -->
+            <div class="tab-pane active" id="chat">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message system">
+                            Hello! I'm your trading assistant. Ask me anything about trading strategies or market analysis.
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Type your question here...">
+                        <button id="sendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Analysis Tab -->
+            <div class="tab-pane" id="market">
+                <div class="market-form">
+                    <input type="text" id="symbolInput" placeholder="Enter stock symbol (e.g., AAPL)">
+                    <button id="analyzeBtn">Analyze</button>
+                </div>
+                <div class="market-result" id="marketResult"></div>
+            </div>
+
+            <!-- CSV Analysis Tab -->
+            <div class="tab-pane" id="csv">
+                <div class="csv-upload">
+                    <label for="csvFile" class="file-label">
+                        Choose CSV File
+                        <input type="file" id="csvFile" accept=".csv">
+                    </label>
+                    <button id="uploadBtn">Upload & Analyze</button>
+                </div>
+                <div class="csv-result" id="csvResult"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
